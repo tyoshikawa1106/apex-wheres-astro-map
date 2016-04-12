@@ -36,11 +36,11 @@
             });
 
             // Set a marker for the current location
-            var positionMarker = new google.maps.Marker({
-                map: map,
-                position: currentPosition,
-                icon: 'https://maps.google.com/mapfiles/ms/micons/green.png'
-            });
+            //var positionMarker = new google.maps.Marker({
+            //    map: map,
+            //    position: currentPosition,
+            //    icon: 'https://maps.google.com/mapfiles/ms/micons/green.png'
+            //});
             
             var mapBoundary = new google.maps.LatLngBounds();
             mapBoundary.extend(currentPosition);
