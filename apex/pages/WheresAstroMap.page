@@ -1,0 +1,28 @@
+<apex:page controller="WheresAstroMapController" showHeader="true" sidebar="false" tabStyle="Contact" title="Wheres Astro" id="page">
+    <apex:includeScript value="https://maps.google.com/maps/api/js?sensor=false" />
+    <apex:include pageName="WheresAstroMapCss" />
+    <div id="vf-page">
+        <apex:form id="form">
+            <apex:pageBlock title="Wheres Astro">
+                <apex:pageBlockTable value="{!trailblazers.Contacts}" var="item">
+                    <apex:column headerValue="{!$ObjectType.Contact.Fields.LastName.Label}">
+                        <apex:outputField value="{!item.LastName}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Contact.Fields.FirstName.Label}">
+                        <apex:outputField value="{!item.FirstName}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Contact.Fields.Astro_Location__c.Label}">
+                        <apex:outputField value="{!item.Astro_Location__Latitude__s}" />
+                        <apex:outputText value="," />
+                        <apex:outputField value="{!item.Astro_Location__Longitude__s}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageblock >
+                <!-- Google Map -->
+                <div id="map-canvas"></div>
+            </apex:pageblock>
+        </apex:form>
+    </div>
+    <apex:include pageName="WheresAstroMapScript" />
+</apex:page>

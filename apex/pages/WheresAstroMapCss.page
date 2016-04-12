@@ -1,0 +1,5 @@
+<apex:page>
+    <style type="text/css">
+        #map-canvas { height: 400px; }
+    </style>
+</apex:page>
